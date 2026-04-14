@@ -5,7 +5,7 @@ const AdminDashboard = () => {
   return (
     <div className="admin-body">
       
-      {/* SIDEBAR */}
+      {/* SIDEBAR
       <aside className="admin-sidebar">
         <div className="sidebar-header">
           <h1 className="sidebar-title">Admin Panel</h1>
@@ -52,7 +52,9 @@ const AdminDashboard = () => {
             Logout
           </button>
         </div>
-      </aside>
+      </aside> */}
+
+      
 
       {/* MAIN CONTENT */}
       <main className="admin-main">

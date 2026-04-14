@@ -1,0 +1,175 @@
+/* --- BỐ CỤC TỔNG THỂ (MỚI) --- */
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f6f9;
+}
+
+.admin-main-content {
+  flex: 1; /* Chiếm hết khoảng trống còn lại */
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Chống vỡ layout khi nội dung con quá rộng */
+}
+
+.admin-page-container {
+  padding: 2rem;
+  flex: 1;
+  overflow-y: auto; /* Chỉ scroll ở nội dung chính */
+}
+
+/* --- SIDEBAR GỐC CỦA BẠN (CÓ CHỈNH SỬA NHẸ) --- */
+.admin-sidebar {
+  /* ĐÃ SỬA: Bỏ position: fixed, dùng sticky để tự nhiên đẩy content sang phải */
+  position: sticky; 
+  top: 0;
+  height: 100vh;
+  width: 16rem; 
+  background-color: #f3f3f5;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  z-index: 50;
+  /* MỚI: Hiệu ứng và ẩn nội dung trào ra khi thu nhỏ */
+  transition: width 0.3s ease, padding 0.3s ease;
+  overflow-x: hidden; 
+  border-right: 1px solid rgba(193, 198, 214, 0.4);
+}
+
+/* --- TRẠNG THÁI THU NHỎ (MỚI) --- */
+.admin-sidebar.collapsed {
+  width: 5.5rem; /* Thu nhỏ chỉ vừa đủ chứa icon */
+  padding: 1rem 0.75rem;
+}
+
+.admin-sidebar.collapsed .nav-item {
+  justify-content: center; /* Đẩy icon ra giữa */
+  padding: 0.75rem;
+}
+
+.admin-sidebar.collapsed .user-profile {
+  justify-content: center;
+  padding: 0;
+}
+
+.admin-sidebar.collapsed .btn-logout {
+  padding: 0.5rem;
+  justify-content: center;
+}
+
+/* --- CÁC THÀNH PHẦN BÊN TRONG --- */
+.sidebar-header {
+  padding: 1rem 0.5rem;
+  margin-bottom: 1.5rem;
+  /* MỚI: Biến header thành nút bấm */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #e2e2e4;
+}
+
+.sidebar-title {
+  font-family: var(--font-headline, 'Manrope', sans-serif);
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #1a1c1d;
+  letter-spacing: -0.025em;
+  white-space: nowrap; /* MỚI: Không cho rớt dòng */
+}
+
+.sidebar-subtitle {
+  font-size: 0.75rem;
+  color: var(--color-on-surface-variant, #414753);
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.25rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap; /* MỚI: Chống rớt chữ khi đang transition */
+}
+
+.nav-item.active {
+  background-color: white;
+  color: var(--color-primary, #0059b5);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.nav-item.inactive {
+  color: var(--color-on-surface-variant, #414753);
+}
+
+.nav-item.inactive:hover {
+  background-color: #e2e2e4;
+  transform: translateX(0.25rem);
+}
+
+.sidebar-footer {
+  padding-top: 1rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(193, 198, 214, 0.2);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+.user-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0; /* MỚI: Giữ cho avatar không bị méo */
+}
+
+.user-name { font-size: 0.75rem; font-weight: bold; }
+.user-role { font-size: 0.625rem; color: var(--color-on-surface-variant); }
+
+.btn-logout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ba1a1a;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-logout:hover { background-color: rgba(255, 218, 214, 0.3); }

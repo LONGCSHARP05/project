@@ -45,10 +45,10 @@ body {
   min-height: 100vh;
 }
 
-/* --- SIDEBAR --- */
+/* --- SIDEBAR ---
 .sidebar {
   width: 16rem; /* 256px */
-  height: 100vh;
+  /* height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
@@ -57,9 +57,9 @@ body {
   flex-direction: column;
   padding: 1rem;
   z-index: 40;
-}
+} */
 
-.sidebar__header {
+/* .sidebar__header {
   padding: 2rem 1rem;
 }
 
@@ -133,8 +133,8 @@ body {
   transition: all 0.3s ease;
 }
 
-.btn-logout:hover { background-color: rgba(186, 26, 26, 0.1); transform: translateX(4px); }
-
+.btn-logout:hover { background-color: rgba(186, 26, 26, 0.1); transform: translateX(4px); } */
+ 
 /* --- MAIN CONTENT --- */
 .main-content {
   margin-left: 16rem;

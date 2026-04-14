@@ -5,7 +5,7 @@ const OrderManagement = () => {
   return (
     <div className="admin-layout">
       
-      {/* 1. LEFT SIDEBAR */}
+      {/* 1. LEFT SIDEBAR
       <aside className="sidebar">
         <div className="sidebar__header">
           <h1 className="sidebar__title">Admin Panel</h1>
@@ -20,9 +20,9 @@ const OrderManagement = () => {
           <a href="#" className="nav__item nav__item--inactive">
             <span className="material-symbols-outlined nav__icon">inventory_2</span>
             Products
-          </a>
+          </a> */}
           {/* Active Item */}
-          <a href="#" className="nav__item nav__item--active">
+          {/* <a href="#" className="nav__item nav__item--active">
             <span className="material-symbols-outlined nav__icon" style={{ fontVariationSettings: "'FILL' 1" }}>shopping_cart</span>
             Orders
           </a>
@@ -42,7 +42,7 @@ const OrderManagement = () => {
             Logout
           </button>
         </div>
-      </aside>
+      </aside> */}
 
       {/* 2. MAIN CONTENT AREA */}
       <main className="main-content">

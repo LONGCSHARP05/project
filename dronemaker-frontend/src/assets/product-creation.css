@@ -28,14 +28,14 @@
   display: flex;
 }
 
-/* --- SIDEBAR --- */
-.admin-sidebar {
+--- SIDEBAR ---
+/* .admin-sidebar {
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
-  width: 16rem; /* 256px */
-  background-color: var(--color-surface-container-low);
+  width: 16rem; 256px */
+  /* background-color: var(--color-surface-container-low);
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -57,12 +57,12 @@
 
 .sidebar-subtitle {
   font-size: 0.625rem; /* 10px */
-  text-transform: uppercase;
+  /* text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-on-surface-variant);
   opacity: 0.6;
-}
-
+} */
+/* 
 .sidebar-nav {
   display: flex;
   flex-direction: column;
@@ -98,7 +98,7 @@
 
 .nav-item.inactive:hover {
   background-color: var(--color-surface-container-highest);
-}
+} */ 
 
 /* User Card at bottom */
 .sidebar-user-card {

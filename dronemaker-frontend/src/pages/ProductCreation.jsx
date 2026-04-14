@@ -5,7 +5,7 @@ const ProductCreation = () => {
   return (
     <div className="inventory-body">
       
-      {/* 1. LEFT SIDEBAR */}
+      {/* 1. LEFT SIDEBAR
       <aside className="admin-sidebar">
         <div className="sidebar-header">
           <h1 className="sidebar-title">Admin Panel</h1>
@@ -45,7 +45,7 @@ const ProductCreation = () => {
           </div>
           <button className="btn-logout">Logout</button>
         </div>
-      </aside>
+      </aside> */}
 
       {/* 2. MAIN CONTENT AREA */}
       <main className="main-content">

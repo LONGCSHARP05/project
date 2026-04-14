@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
+import AdminLayout from "../layouts/AdminLayout";
 import About from "../pages/About";
 import Home from "../pages/Home";
 import News from "../pages/News";
@@ -33,22 +34,24 @@ function AppRoutes() {
   return (
     <Routes>
         <Route element={<MainLayout />}>
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/news/:id" element={<Article />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:id" element={<Article />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
         </Route>
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/product-creation" element={<ProductCreation />} />
-        <Route path="/admin/article-management" element={<ArticleManagement />} />
-        <Route path="/admin/order-management" element={<OrderManagement />} />
-        <Route path="/admin/product-overview" element={<ProductOverview />} />
-        <Route path="/admin/create-article" element={<CreateArticle />} />
+        <Route element={<AdminLayout />}>
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/product-creation" element={<ProductCreation />} />
+          <Route path="/admin/article-management" element={<ArticleManagement />} />
+          <Route path="/admin/order-management" element={<OrderManagement />} />
+          <Route path="/admin/product-overview" element={<ProductOverview />} />
+          <Route path="/admin/create-article" element={<CreateArticle />} />
+        </Route>
     </Routes>
   );
 }

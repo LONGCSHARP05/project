@@ -6,7 +6,7 @@ const ArticleManagement = () => {
     <div className="admin-body">
       
       {/* 1. SIDEBAR */}
-      <aside className="admin-sidebar">
+      {/* <aside className="admin-sidebar">
         <div className="sidebar-header">
           <h1 className="sidebar-title font-headline">Admin Panel</h1>
           <p className="sidebar-subtitle">DroneMaker Control</p>
@@ -24,9 +24,9 @@ const ArticleManagement = () => {
           <a href="#" className="nav-item inactive">
             <span className="material-symbols-outlined">shopping_cart</span>
             <span>Orders</span>
-          </a>
+          </a> */}
           {/* Active State */}
-          <a href="#" className="nav-item active">
+          {/* <a href="#" className="nav-item active">
             <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>article</span>
             <span>Articles</span>
           </a>
@@ -42,7 +42,7 @@ const ArticleManagement = () => {
             <span>Logout</span>
           </button>
         </div>
-      </aside>
+      </aside> */}
 
       {/* 2. MAIN CONTENT AREA */}
       <main className="main-content">

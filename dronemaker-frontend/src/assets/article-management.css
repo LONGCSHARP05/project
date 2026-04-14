@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6, .font-headline {
 }
 
 /* --- SIDEBAR --- */
-.admin-sidebar {
+/* .admin-sidebar {
   position: fixed;
   left: 0;
   top: 0;
@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6, .font-headline {
   font-size: 0.875rem; font-weight: 500; cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.btn-logout:hover { background-color: rgba(186, 26, 26, 0.1); }
+.btn-logout:hover { background-color: rgba(186, 26, 26, 0.1); } */
 
 /* --- MAIN CONTENT & HEADER --- */
 .main-content {

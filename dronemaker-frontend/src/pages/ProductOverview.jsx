@@ -5,7 +5,7 @@ const ProductOverview = () => {
   return (
     <div className="inventory-layout">
       
-      {/* 1. SIDEBAR */}
+      {/* 1. SIDEBAR
       <aside className="sidebar">
         <div className="sidebar__header">
           <h1 className="sidebar__title">Admin Panel</h1>
@@ -19,7 +19,7 @@ const ProductOverview = () => {
           </a>
           
           {/* Active Item */}
-          <a className="nav__link nav__link--active" href="#">
+          {/* <a className="nav__link nav__link--active" href="#">
             <span className="material-symbols-outlined nav__icon" style={{ fontVariationSettings: "'FILL' 1" }}>inventory_2</span>
             <span>Products</span>
           </a>
@@ -48,7 +48,7 @@ const ProductOverview = () => {
           </div>
           <button className="btn-logout">Logout</button>
         </div>
-      </aside>
+      </aside> */} 
 
       {/* 2. MAIN CONTENT AREA */}
       <main className="main-content">

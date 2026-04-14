@@ -37,12 +37,12 @@ body {
 }
 
 /* --- 1. SHARED SIDEBAR & TOPBAR (Tóm tắt nhanh) --- */
-.sidebar { width: var(--sidebar-width); position: fixed; height: 100vh; background-color: var(--color-surface-container-low); padding: 1.5rem 1rem; z-index: 40; }
+/* .sidebar { width: var(--sidebar-width); position: fixed; height: 100vh; background-color: var(--color-surface-container-low); padding: 1.5rem 1rem; z-index: 40; }
 .sidebar__brand { font-family: var(--font-headline); font-size: 1.25rem; font-weight: 800; margin-bottom: 2rem; padding: 0 0.5rem; }
 .nav__item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: 0.5rem; color: var(--color-on-surface-variant); text-decoration: none; font-weight: 500; font-size: 0.875rem; margin-bottom: 0.25rem; transition: background 0.2s; }
 .nav__item:hover { background-color: var(--color-surface-container-highest); }
 .nav__item--active { color: var(--color-primary); background-color: var(--color-surface-container-lowest); font-weight: 700; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-.nav__item--active:hover { background-color: var(--color-surface-container-lowest); }
+.nav__item--active:hover { background-color: var(--color-surface-container-lowest); } */
 
 .topbar { position: fixed; top: 0; left: var(--sidebar-width); right: 0; height: var(--topbar-height); background: rgba(249, 249, 251, 0.8); backdrop-filter: blur(12px); display: flex; justify-content: space-between; align-items: center; padding: 0 2.5rem; z-index: 30; }
 .search-box { display: flex; align-items: center; gap: 0.5rem; color: var(--color-on-surface-variant); }

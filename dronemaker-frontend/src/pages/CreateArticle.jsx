@@ -5,7 +5,7 @@ const CreateArticle = () => {
   return (
     <div className="create-layout">
       
-      {/* 1. SIDEBAR */}
+      {/* 1. SIDEBAR
       <aside className="sidebar">
         <h1 className="sidebar__brand">DroneMaker</h1>
         <nav>
@@ -25,7 +25,7 @@ const CreateArticle = () => {
             <span className="material-symbols-outlined">settings</span> Settings
           </a>
         </nav>
-      </aside>
+      </aside> */}
 
       {/* 2. TOPBAR */}
       <header className="topbar">
