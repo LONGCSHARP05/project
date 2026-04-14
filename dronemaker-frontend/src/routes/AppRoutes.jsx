@@ -14,6 +14,7 @@ import ProductCreation from "../pages/ProductCreation";
 import ProductOverview from "../pages/ProductOverview";
 import ArticleManagement from "../pages/ArticleManagement";
 import OrderManagement from "../pages/OrderManagement";
+import CreateArticle from "../pages/CreateArticle";
 // Protected Route Component
 
 
@@ -47,6 +48,7 @@ function AppRoutes() {
         <Route path="/admin/article-management" element={<ArticleManagement />} />
         <Route path="/admin/order-management" element={<OrderManagement />} />
         <Route path="/admin/product-overview" element={<ProductOverview />} />
+        <Route path="/admin/create-article" element={<CreateArticle />} />
     </Routes>
   );
 }
