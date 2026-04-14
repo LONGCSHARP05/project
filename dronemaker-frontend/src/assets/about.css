@@ -1,0 +1,477 @@
+/* =========================================
+   VARIABLES & BASE STYLES
+========================================= */
+:root {
+  /* Colors from Tailwind Config */
+  --color-primary: #0059b5;
+  --color-primary-container: #0071e3;
+  --color-primary-fixed: #d7e2ff;
+  --color-primary-fixed-dim: #abc7ff;
+  --color-surface: #f9f9fb;
+  --color-surface-container-low: #f3f3f5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-highest: #e2e2e4;
+  --color-on-surface: #1a1c1d;
+  --color-on-surface-variant: #414753;
+  --color-on-background: #1a1c1d;
+  --color-tertiary: #9b3f00;
+
+  /* Fonts */
+  --font-headline: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+.about-page {
+  font-family: var(--font-body);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 80rem; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =========================================
+   1. HERO SECTION
+========================================= */
+.hero-section {
+  position: relative;
+  height: 819px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-on-background);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-play-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-play-btn {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: rgba(0, 89, 181, 0.9); /* primary/90 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.hero-play-btn:hover {
+  transform: scale(1.1);
+}
+
+.hero-play-icon {
+  color: white;
+  font-size: 2.5rem;
+  margin-left: 0.5rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: skyblue;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero-title {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  color: white;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero-title { font-size: 6rem; }
+}
+
+/* =========================================
+   2. COMPANY OVERVIEW
+========================================= */
+.overview-section {
+  padding: 8rem 0;
+  background-color: var(--color-surface);
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .overview-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.overview-heading {
+  font-family: var(--font-headline);
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--color-on-surface);
+  line-height: 1.25;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .overview-heading { font-size: 3rem; }
+}
+
+.overview-desc {
+  font-size: 1.125rem;
+  color: var(--color-on-surface-variant);
+  line-height: 1.625;
+  margin-bottom: 2rem;
+}
+
+.overview-stats {
+  display: flex;
+  gap: 3rem;
+  border-top: 1px solid rgba(193, 198, 214, 0.2);
+  padding-top: 3rem;
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-headline);
+  font-size: 1.875rem;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-on-surface-variant);
+}
+
+.overview-image-wrapper {
+  position: relative;
+}
+
+.overview-image-container {
+  aspect-ratio: 4 / 5;
+  background-color: var(--color-surface-container-low);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.overview-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overview-quote-card {
+  position: absolute;
+  bottom: -2rem;
+  left: -2rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  max-width: 20rem;
+  border: 1px solid var(--color-surface-container-highest);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .overview-quote-card { display: block; }
+}
+
+.quote-text {
+  font-size: 0.875rem;
+  color: var(--color-on-surface);
+  font-style: italic;
+}
+
+.quote-author {
+  margin-top: 1rem;
+  font-family: var(--font-headline);
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* =========================================
+   3. BENTO: MISSION & VISION (FIXED)
+========================================= */
+.bento-section {
+  padding: 8rem 0;
+  background-color: var(--color-surface-container-low, #f3f3f5);
+}
+
+.bento-grid-fixed {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Giải pháp tối ưu: Thay vì 12 cột, dùng tỷ lệ 2:1 (8:4) */
+@media (min-width: 1024px) {
+  .bento-grid-fixed {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.mission-card-fixed {
+  background-color: var(--color-surface-container-lowest, #ffffff);
+  padding: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vision-card-fixed {
+  background-color: var(--color-primary, #0059b5);
+  padding: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .mission-card-fixed, .vision-card-fixed { 
+    padding: 4rem; 
+  }
+}
+
+/* Ép background trong suốt để diệt tận gốc dải màu xanh đè lên chữ */
+.bento-tag-blue {
+  background: transparent !important; 
+  color: var(--color-primary, #0059b5);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.bento-tag-light {
+  background: transparent !important;
+  color: var(--color-primary-fixed, #d7e2ff);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.bento-title-dark {
+  font-family: var(--font-headline, 'Manrope', sans-serif);
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  letter-spacing: -0.025em;
+  color: var(--color-on-surface, #1a1c1d);
+  line-height: 1.3;
+}
+
+.bento-title-light {
+  font-family: var(--font-headline, 'Manrope', sans-serif);
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.bento-desc-dark {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  color: var(--color-on-surface-variant, #414753);
+  line-height: 1.8;
+  font-size: 1.125rem;
+  max-width: 42rem;
+}
+
+.bento-divider {
+  width: 3rem;
+  height: 0.25rem;
+  background-color: var(--color-primary-fixed-dim, #abc7ff);
+  border-radius: 9999px;
+  margin-top: 1rem;
+}
+/* =========================================
+   4. HISTORY TIMELINE
+========================================= */
+.timeline-section {
+  padding: 8rem 0;
+  background-color: var(--color-surface);
+  overflow: hidden;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.section-title {
+  font-family: var(--font-headline);
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+.timeline-row, .timeline-row-reverse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 10rem;
+}
+
+@media (min-width: 768px) {
+  .timeline-row { flex-direction: row; }
+  .timeline-row-reverse { flex-direction: row-reverse; text-align: right; }
+}
+
+.timeline-image-wrapper, .timeline-content {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .timeline-image-wrapper, .timeline-content { width: 50%; }
+}
+
+.timeline-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-year {
+  font-family: var(--font-headline);
+  font-size: 3.75rem;
+  font-weight: 900;
+  color: var(--color-surface-container-highest);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.timeline-subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-desc {
+  color: var(--color-on-surface-variant);
+  line-height: 1.625;
+}
+
+/* =========================================
+   5. CAPABILITIES
+========================================= */
+.capabilities-section {
+  padding: 8rem 0;
+  background-color: var(--color-surface-container-highest);
+}
+
+.capabilities-header {
+  margin-bottom: 4rem;
+}
+
+.section-desc {
+  color: var(--color-on-surface-variant);
+  margin-top: 1rem;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .capabilities-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.capability-card {
+  background-color: var(--color-surface-container-lowest);
+  padding: 3rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-surface-container-highest);
+  transition: all 0.3s ease;
+}
+
+.capability-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.5rem);
+}
+
+.capability-icon {
+  color: var(--color-tertiary);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.capability-card:hover .capability-icon {
+  transform: scale(1.1);
+}
+
+.capability-title {
+  font-family: var(--font-headline);
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.capability-desc {
+  font-size: 0.875rem;
+  color: var(--color-on-surface-variant);
+  line-height: 1.625;
+}

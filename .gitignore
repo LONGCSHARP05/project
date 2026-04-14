@@ -1,0 +1,8 @@
+/config
+/Makefile
+/mysql
+/pyproject.toml
+/scripts
+/src
+/tests
+/webapp
