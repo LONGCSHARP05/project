@@ -401,26 +401,26 @@
 
 /* --- FIX LỖI KHOẢNG CÁCH PHÂN TRANG --- */
 .pagination {
+  margin-top: 6rem;
   display: flex;
-  justify-content: center; /* Bắt buộc: Đẩy tất cả các nút tụm lại ở giữa màn hình */
   align-items: center;
-  gap: 8px; /* Set cứng khoảng cách là 8px (rất gần nhau) */
-  margin-top: 3rem;
-  padding-bottom: 2rem;
-  width: 100%; /* Đảm bảo nó chiếm trọn chiều ngang để căn giữa chính xác */
+  justify-content: space-between;
+  border-top: 1px solid var(--color-surface-container-high, #e8e8ea);
+  padding-top: 3rem;
 }
 
 /* Khóa cứng kích thước nút để chúng luôn là hình vuông hoàn hảo */
 .page-btn {
-  margin: 0;
-  width: 36px; 
-  height: 36px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 0;
-  /* Giữ nguyên màu sắc, border cũ của bạn... */
+  gap: 0.5rem;
+  color: var(--color-outline, #717785);
+  transition: color 0.3s ease, opacity 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
+
 
 .page-btn:hover:not(:disabled) {
   background-color: #f3f3f5;

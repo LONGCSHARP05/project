@@ -8,6 +8,7 @@ import Article from "../pages/Article";
 import Contact from "../pages/Contact";
 import Checkout from "../pages/Checkout";
 import Shop from "../pages/Shop";
+import Cart from "../pages/Cart";
 import ProductDetail from "../pages/ProductDetail";
 import AdminLogin from "../pages/AdminLogin";
 import AdminDashboard from "../pages/AdminDashboard";
@@ -42,6 +43,7 @@ function AppRoutes() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route element={<AdminLayout />}>

@@ -388,7 +388,7 @@ const Shop = () => {
               )}
             </div>
 
-            {totalPages > 1 && (
+                                {totalPages > 1 && (
               <div className="pagination">
                 <button 
                   className="page-btn" 
@@ -417,7 +417,8 @@ const Shop = () => {
                 </button>
               </div>
             )}
-          </section>
+
+          </section>       
         </div>
       </div>
     </main>
