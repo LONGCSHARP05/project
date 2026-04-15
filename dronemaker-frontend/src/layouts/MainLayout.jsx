@@ -1,23 +1,29 @@
 import React from 'react';
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
+// import { useLocation, useNavigate } from 'react-router-dom';
+
 import '../assets/main-layout.css';
 
 const MainLayout = () => {
-  const location = useLocation();
+  // const location = useLocation();
+  // const navigate = useNavigate();
+
+
 
   return (
     <>
       {/* --- HEADER --- */}
       <nav className="global-header">
         <div className="header-container">
-          <Link to="/" className="brand-logo">DroneMaker</Link>
+          <Link to="/home" className="brand-logo">DroneMaker</Link>
 
           <div className="nav-links">
             {/* Thêm logic đổi class "active" dựa vào URL */}
-            <Link to="/products" className={location.pathname === '/products' ? 'nav-link active' : 'nav-link'}>Products</Link>
-            <Link to="/solutions" className={location.pathname === '/solutions' ? 'nav-link active' : 'nav-link'}>Solutions</Link>
-            <Link to="/support" className={location.pathname === '/support' ? 'nav-link active' : 'nav-link'}>Support</Link>
-            <Link to="/about" className={location.pathname === '/about' ? 'nav-link active' : 'nav-link'}>About</Link>
+            <Link to="/home" className="nav-link">Home</Link>
+            <Link to="/shop" className="nav-link">Shop</Link>
+            <Link to="/news" className="nav-link">News</Link>
+            <Link to="/about" className="nav-link">About</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
           </div>
 
           <div className="header-actions">

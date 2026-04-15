@@ -1,3 +1,5 @@
+
+
 /* =========================================
    SHOP PAGE - VANILLA CSS
 ========================================= */
@@ -32,11 +34,13 @@
 .breadcrumbs a:hover { color: var(--color-primary, #0059b5); }
 .breadcrumbs .current { color: var(--color-on-surface, #1a1c1d); }
 
-/* --- SHOP LAYOUT (25% - 75%) --- */
+/* --- SỬA LAYOUT ĐỂ SIDEBAR CỐ ĐỊNH (STICKY) --- */
 .shop-layout {
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
+  /* Quan trọng: align-items: flex-start ngăn sidebar bị kéo dài 
+     bằng với chiều cao của main content, điều kiện bắt buộc để sticky hoạt động */
+  align-items: flex-start; 
 }
 
 @media (min-width: 1024px) {
@@ -44,8 +48,27 @@
 }
 
 /* --- SIDEBAR --- */
-.shop-sidebar { width: 100%; }
-@media (min-width: 1024px) { .shop-sidebar { width: 25%; } }
+.shop-sidebar {
+  width: 25%;
+  position: sticky;
+  top: 2rem; /* Khoảng cách từ đỉnh màn hình khi cuộn xuống */
+  /* Thiết lập chiều cao tối đa bằng màn hình để sidebar có thể tự cuộn nếu nó quá dài */
+  max-height: calc(100vh - 4rem); 
+  overflow-y: auto; 
+}
+
+/* Ẩn thanh cuộn của sidebar cho đẹp (Tuỳ chọn) */
+.shop-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.shop-sidebar::-webkit-scrollbar-thumb {
+  background-color: #c1c6d6;
+  border-radius: 4px;
+}
+
+.shop-main {
+  width: 75%;
+}
 
 .sidebar-section { margin-bottom: 3rem; }
 
@@ -103,6 +126,12 @@
 
 .category-sublist a:hover { color: var(--color-primary, #0059b5); }
 
+/* CSS cho Link Danh mục đang được chọn */
+.category-sublist a.active-link {
+  color: var(--color-primary, #0059b5);
+  font-weight: 700;
+}
+
 /* Price Filter */
 .price-slider-container { margin-bottom: 1.5rem; }
 
@@ -144,6 +173,58 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--color-on-surface, #1a1c1d);
+}
+
+/* --- BỘ LỌC GIÁ (PRICE FILTER) --- */
+.filter-price {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Tạo khoảng cách thở giữa form nhập và nút bấm */
+  margin-bottom: 1.5rem;
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem; /* Khoảng cách đều giữa input và dấu gạch ngang */
+}
+
+/* Định dạng lại ô nhập số cho hiện đại */
+.price-inputs input {
+  width: 100%; /* Ép 2 ô input chia đều không gian */
+  min-width: 0; /* Chống lỗi input đẩy tràn khung trên một số trình duyệt */
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--color-surface-container-highest, #e2e2e4);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--color-on-surface, #1a1c1d);
+  background-color: white;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi click vào ô nhập */
+.price-inputs input:focus {
+  border-color: var(--color-primary, #0059b5);
+  box-shadow: 0 0 0 3px rgba(0, 89, 181, 0.1); /* Viền glow nhẹ nhàng */
+}
+
+/* CSS HACK: Ẩn mũi tên tăng giảm số mặc định của trình duyệt cho đẹp mắt */
+.price-inputs input::-webkit-outer-spin-button,
+.price-inputs input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.price-inputs input[type=number] {
+  appearance: textfield;
+}
+
+/* Dấu gạch ngang ở giữa */
+.price-inputs span {
+  color: var(--color-outline, #717785);
+  font-weight: 500;
 }
 
 .btn-filter {
@@ -229,6 +310,9 @@
   padding: 1rem;
   border-radius: 0.75rem;
   transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Đảm bảo mọi thẻ trên cùng 1 hàng đều cao bằng nhau */
 }
 
 .product-card:hover {
@@ -282,8 +366,12 @@
   color: var(--color-primary, #0059b5);
 }
 
+
+/* BƯỚC 2: Ép nút xuống đáy */
 .product-add-cart {
-  margin-top: 1.5rem;
+  margin-top: auto; /* BÍ QUYẾT LÀ DÒNG NÀY */
+  
+  /* Giữ nguyên các hiệu ứng hover cũ của bạn */
   opacity: 0;
   transform: translateY(0.5rem);
   transition: all 0.3s ease;
@@ -311,36 +399,54 @@
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
 }
 
-/* --- PAGINATION --- */
+/* --- FIX LỖI KHOẢNG CÁCH PHÂN TRANG --- */
 .pagination {
   display: flex;
+  justify-content: center; /* Bắt buộc: Đẩy tất cả các nút tụm lại ở giữa màn hình */
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 5rem;
+  gap: 8px; /* Set cứng khoảng cách là 8px (rất gần nhau) */
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  width: 100%; /* Đảm bảo nó chiếm trọn chiều ngang để căn giữa chính xác */
 }
 
+/* Khóa cứng kích thước nút để chúng luôn là hình vuông hoàn hảo */
 .page-btn {
-  width: 2.5rem;
-  height: 2.5rem;
+  margin: 0;
+  width: 36px; 
+  height: 36px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background-color: var(--color-surface-container-low, #f3f3f5);
-  color: var(--color-outline, #717785);
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  align-items: center;
+  padding: 0;
+  /* Giữ nguyên màu sắc, border cũ của bạn... */
 }
 
-.page-btn:hover {
-  background-color: var(--color-primary, #0059b5);
-  color: white;
+.page-btn:hover:not(:disabled) {
+  background-color: #f3f3f5;
+  color: var(--color-primary, #0059b5);
 }
 
 .page-btn.active {
   background-color: var(--color-primary, #0059b5);
   color: white;
+  border-color: var(--color-primary, #0059b5);
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f9f9fb;
+}
+
+/* --- CSS CHO NÚT RESET GIÁ --- */
+.btn-reset-price {
+  background-color: transparent;
+  color: #ba1a1a; /* Màu đỏ thẫm */
+  border: 1px solid #ba1a1a;
+}
+
+.btn-reset-price:hover {
+  background-color: #ffdad6; /* Nền đỏ nhạt khi di chuột */
+  color: #ba1a1a;
 }

@@ -36,7 +36,7 @@
 
 /* Các link điều hướng ở giữa */
 .nav-links {
-  display: none; /* Ẩn trên mobile */
+  display:flex; /* Ẩn trên mobile */
 }
 
 @media (min-width: 768px) {
@@ -64,6 +64,8 @@
   border-bottom: 2px solid var(--color-primary, #0059b5);
   padding-bottom: 0.25rem;
 }
+
+
 
 /* Cụm icon và search bên phải */
 .header-actions {

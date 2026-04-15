@@ -62,7 +62,7 @@ const AdminLayout = () => {
             <span className="material-symbols-outlined">dashboard</span>
             {!isCollapsed && <span>Dashboard</span>}
           </NavLink>
-          
+          {/* khi click vào chức năng trong sidebar thì để load nội dung thì dùng NavLink thay vì a href, NavLink sẽ giúp chúng ta tự động thêm class active vào item đang được chọn, và không làm load lại trang */}
           <NavLink to="/admin/product-overview" className={({ isActive }) => `nav-item ${isActive ? 'active' : 'inactive'}`}>
             <span className="material-symbols-outlined">inventory_2</span>
             {!isCollapsed && <span>Products</span>}
