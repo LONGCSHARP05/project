@@ -409,3 +409,39 @@
   font-weight: bold;
   line-height: 1.6;
 }
+
+/* --- SUCCESS TOAST --- */
+.checkout-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #1a1c1d; /* on-surface */
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  animation: slideInUp 0.3s ease-out;
+}
+
+.checkout-toast .material-symbols-outlined {
+  color: #34c759; /* color-success */
+  font-size: 1.5rem;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

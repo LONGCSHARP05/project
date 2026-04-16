@@ -34,9 +34,9 @@ const MainLayout = () => {
                 type="text"
               />
             </div>
-            <button className="action-icon-btn">
+            <Link to="/cart" className="action-icon-btn">
               <span className="material-symbols-outlined">shopping_cart</span>
-            </button>
+            </Link>
             <Link to="/admin/login" className="action-icon-btn">
               <span className="material-symbols-outlined">account_circle</span>
             </Link>

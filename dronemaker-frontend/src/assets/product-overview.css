@@ -162,6 +162,7 @@ body {
   margin-left: var(--sidebar-width);
   flex-grow: 1;
   padding: 2.5rem;
+  margin-top: 0;
 }
 
 .page-header {

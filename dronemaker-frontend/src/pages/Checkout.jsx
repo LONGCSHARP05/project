@@ -1,80 +1,101 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../contexts/CartContext.jsx'; // Đảm bảo import đúng file Context
+import { useCart } from '../contexts/CartContext.jsx'; 
 import '../assets/checkout.css';
 
 const Checkout = () => {
   const { cartItems, getSubtotal, clearCart } = useCart();
   const navigate = useNavigate();
 
-  // 1. Quản lý State cho Form và Lựa chọn
+  const mockItems = [
+    {
+      id: 101,
+      name: "DJI Mavic 3 Pro",
+      category: "Personal Drones",
+      price: 49000000,
+      image: "https://dji-vietnam.vn/wp-content/uploads/2024/04/avata2-body-5.jpg",
+      quantity: 1
+    },
+    {
+      id: 102,
+      name: "DJI Avata 2",
+      category: "FPV Drones",
+      price: 25000000,
+      image: "https://dji-vietnam.vn/wp-content/uploads/2024/04/dji-fpv-remote-controller-4.jpg",
+      quantity: 1
+    }
+  ];
+
+  const displayItems = cartItems.length > 0 ? cartItems : mockItems;
+
   const [formData, setFormData] = useState({
     name: '', email: '', country: 'Vietnam', address: '', city: '', phone: ''
   });
   const [paymentMethod, setPaymentMethod] = useState('credit');
   const [shippingMethod, setShippingMethod] = useState('standard');
+  const [showToast, setShowToast] = useState(false);
 
-  // 2. Logic Điền nhanh khi Double Click
   const handleAutoFill = () => {
     setFormData({
-      name: 'Vũ Trường Long',
+      name: 'Vu Truong Long',
       email: 'longvu@example.com',
       country: 'Vietnam',
-      address: '207 Giải Phóng, Đồng Tâm',
-      city: 'Hà Nội',
+      address: '207 Giai Phong, Dong Tam',
+      city: 'Hanoi',
       phone: '+84 987 654 321'
     });
   };
 
-  // 3. Tính toán tổng tiền
-  const subtotal = getSubtotal();
+  const subtotal = cartItems.length > 0 
+    ? getSubtotal() 
+    : mockItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+  
   const shippingFee = shippingMethod === 'express' ? 150000 : 0;
   const total = subtotal + shippingFee;
 
   const formatPrice = (price) => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
 
-  // 4. Xử lý khi bấm Đặt hàng
   const handlePlaceOrder = () => {
-    if (cartItems.length === 0) {
-      alert("Giỏ hàng của bạn đang trống!");
-      return;
-    }
     if (!formData.name || !formData.phone) {
-      alert("Vui lòng điền thông tin giao hàng!");
+      alert("Please fill in the shipping information!");
       return;
     }
-    alert(`ĐẶT HÀNG THÀNH CÔNG!\nTổng thanh toán: ${formatPrice(total)}\nChúng tôi sẽ liên hệ sớm!`);
-    clearCart();
-    navigate('/shop');
+
+    setShowToast(true);
+    
+    setTimeout(() => {
+      setShowToast(false);
+      clearCart();
+      navigate('/shop');
+    }, 2000);
   };
 
   return (
     <div className="checkout-page-wrapper">
       <main className="checkout-main">
-        {/* PAGE TITLE */}
-        <div className="checkout-page-title-group">
-          <span className="checkout-subtitle">Shipping & Payment</span>
-          <h1 className="checkout-title">Trang Thanh toán</h1>
-        </div>
+        <nav className="breadcrumbs">
+          <a href="#">Home</a>
+          <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>chevron_right</span>
+          <span className="current">Products</span>
+          <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>chevron_right</span>
+          <span className="current">Checkout</span>
+        </nav>
 
         <div className="checkout-grid">
-          {/* LEFT COLUMN: BILLING & PAYMENT */}
           <div className="checkout-forms-container" style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
             
-            {/* Step 1: Billing Info Form */}
             <section>
               <div className="step-header">
                 <div className="step-number active">1</div>
-                <h2 className="step-title">Billing Info Form (Nháy đúp vào Name)</h2>
+                <h2 className="step-title">Shipping Information</h2>
               </div>       
-              {/* Ngăn hành vi reload trang mặc định của form */}
               <form className="checkout-form" onSubmit={e => e.preventDefault()}>
                 <div className="form-row-2">
                   <div className="form-group">
-                    <label className="form-label">Name</label>
+                    <label className="form-label">Full Name</label>
                     <input 
                       className="form-input" 
-                      placeholder="Full name" 
+                      placeholder="Double-click to autofill" 
                       type="text" 
                       value={formData.name}
                       onChange={e => setFormData({...formData, name: e.target.value})}
@@ -103,7 +124,6 @@ const Checkout = () => {
                     <option>Vietnam</option>
                     <option>United States</option>
                     <option>Singapore</option>
-                    <option>Japan</option>
                   </select>
                 </div>
 
@@ -111,7 +131,7 @@ const Checkout = () => {
                   <label className="form-label">Address</label>
                   <input 
                     className="form-input" 
-                    placeholder="Street address, apartment, suite" 
+                    placeholder="Street address..." 
                     type="text"
                     value={formData.address}
                     onChange={e => setFormData({...formData, address: e.target.value})}
@@ -123,14 +143,14 @@ const Checkout = () => {
                     <label className="form-label">City</label>
                     <input 
                       className="form-input" 
-                      placeholder="City name" 
+                      placeholder="Hanoi / Ho Chi Minh City..." 
                       type="text"
                       value={formData.city}
                       onChange={e => setFormData({...formData, city: e.target.value})}
                     />
                   </div>
                   <div className="form-group">
-                    <label className="form-label">Phone</label>
+                    <label className="form-label">Phone Number</label>
                     <input 
                       className="form-input" 
                       placeholder="+84 000 000 000" 
@@ -143,7 +163,6 @@ const Checkout = () => {
               </form>
             </section>
 
-            {/* Step 2: Payment Method */}
             <section style={{ paddingTop: '2rem' }}>
               <div className="step-header">
                 <div className="step-number inactive">2</div>
@@ -151,7 +170,6 @@ const Checkout = () => {
               </div>
               
               <div className="payment-methods-grid">
-                {/* Logic chuyển đổi class active/inactive dựa trên state */}
                 <div 
                   className={`payment-card ${paymentMethod === 'credit' ? 'active' : 'inactive'}`}
                   onClick={() => setPaymentMethod('credit')}
@@ -170,33 +188,26 @@ const Checkout = () => {
             </section>
           </div>
 
-          {/* RIGHT COLUMN: ORDER SUMMARY */}
           <div>
             <div className="summary-panel">
               <h2 className="summary-title">Order Summary</h2>
               
-              {/* Products List Rendering */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2rem' }}>
-                {cartItems.length > 0 ? (
-                  cartItems.map((item, index) => (
-                    <div className="product-item" key={index}>
-                      <div className="product-img-box">
-                        <img alt={item.name} src={item.image || "https://lh3.googleusercontent.com/aida-public/AB6AXuDYCi2XcCL4_vll8ckoaxDnZlc98y-3Y9AZSoh4osYUoniPIlobsf7tL4aL7tfLsWpe8Yfsu5FkBhfNFjluzn7UvZg"} />
-                      </div>
-                      <div className="product-details">
-                        <h3 className="product-name">{item.name}</h3>
-                        <p className="product-desc">{item.category || 'Sản phẩm'}</p>
-                        <p className="product-price">{formatPrice(item.price)}</p>
-                      </div>
-                      <div className="product-qty">x{item.qty}</div>
+                {displayItems.map((item, index) => (
+                  <div className="product-item" key={index}>
+                    <div className="product-img-box">
+                      <img alt={item.name} src={item.image} />
                     </div>
-                  ))
-                ) : (
-                  <p style={{ color: 'var(--color-on-surface-variant)', fontSize: '0.875rem' }}>Giỏ hàng của bạn đang trống.</p>
-                )}
+                    <div className="product-details">
+                      <h3 className="product-name">{item.name}</h3>
+                      <p className="product-desc">{item.category}</p>
+                      <p className="product-price">{formatPrice(item.price)}</p>
+                    </div>
+                    <div className="product-qty">x{item.quantity || item.qty}</div>
+                  </div>
+                ))}
               </div>
 
-              {/* Pricing & Shipping */}
               <div className="summary-divider">
                 <div className="price-row">
                   <span style={{ color: 'var(--color-on-surface-variant)' }}>Subtotal</span>
@@ -204,9 +215,8 @@ const Checkout = () => {
                 </div>
 
                 <div className="shipping-options">
-                  <span className="shipping-label">Shipping options</span>
+                  <span className="shipping-label">Shipping</span>
                   
-                  {/* Logic chuyển đổi class active/inactive cho Shipping */}
                   <label 
                     className={`shipping-card ${shippingMethod === 'standard' ? 'active' : 'inactive'}`}
                     onClick={() => setShippingMethod('standard')}
@@ -224,9 +234,9 @@ const Checkout = () => {
                   >
                     <div className="shipping-radio-group">
                       <input type="radio" name="shipping" className="custom-radio" checked={shippingMethod === 'express'} readOnly />
-                      <span style={{ fontSize: '0.875rem', fontWeight: '500' }}>Express Courier (2h)</span>
+                      <span style={{ fontSize: '0.875rem', fontWeight: '500' }}>Express (2h)</span>
                     </div>
-                    <span style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>150.000₫</span>
+                    <span style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>150,000₫</span>
                   </label>
                 </div>
 
@@ -236,20 +246,21 @@ const Checkout = () => {
                 </div>
               </div>
 
-              {/* CTA */}
               <button className="btn-order" onClick={handlePlaceOrder}>
-                ĐẶT HÀNG
+                PLACE ORDER
                 <span className="material-symbols-outlined btn-order-icon">arrow_forward</span>
               </button>
-              
-              <p className="order-terms">
-                By placing an order, you agree to DroneMaker's <br />Terms of Service and Privacy Policy.
-              </p>
             </div>
           </div>
-
         </div>
       </main>
+
+      {showToast && (
+        <div className="checkout-toast">
+          <span className="material-symbols-outlined">check_circle</span>
+          <p>Order placed successfully! Redirecting...</p>
+        </div>
+      )}
     </div>
   );
 };

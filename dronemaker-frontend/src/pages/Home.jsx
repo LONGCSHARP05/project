@@ -125,11 +125,11 @@ const Home = () => {
               {/* Product Card 2 */}
               <div className="product-card">
                 <div className="product-img-wrapper">
-                  <img className="product-img" alt="Avata 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV8l7kqJxV8NPPV_5776c3SYRAd8DEE0oqQDuO7-bV9k1hX-q6s_GR3q1IkBtAukIBu-9ACcGEShAIaqkW6WiMhTnjBd_AeowPPGGYzNhwLTFCtu3YIgvmDgPjef-JXevWVuQfocv1Y3A-YvhJ25Vdw6QZfVprJkWRbYNdaYdkcgnhgXN_DWl9xMc97WE7bw7cjvG2sL8FfDqpDK9PHfR_i5ygTyTcOCNKXxPpwYVkVTrCVvZILND9OUlFPiOf1ICHjuo1AhRCz_M" />
+                  <img className="product-img" alt="Mini 4K" src="https://dji-vietnam.vn/wp-content/uploads/2024/09/dji-mini-4k-1.jpg" />
                 </div>
                 <div className="product-info">
-                  <h3 className="product-title">Avata 2</h3>
-                  <p className="product-subtitle">Immersive FPV Flight Experience</p>
+                  <h3 className="product-title">Mini 4K</h3>
+                  <p className="product-subtitle">Compact Design, 4K/60fps Video</p>
                   <div className="product-bottom">
                     <span className="product-price">$1,299.00</span>
                     <button className="add-btn">
@@ -142,7 +142,7 @@ const Home = () => {
               {/* Product Card 3 */}
               <div className="product-card">
                 <div className="product-img-wrapper">
-                  <img className="product-img" alt="Mini 4 Pro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB47ZsSkJYcmkOAJkfSNMK8fgJLOxpGr81iJpiI0Bu5bjAwkb77VNFLRNouFCZ3-NICFEkTHkhWjnQoh3GPKgMQ4aEOBTWgpYZNnKbmieng_ptBqkGJ7CvhKxIkinrQsHJxZ-UyshPtMvishq01brP1MObZ1Ju3Jppr2yhrP5ptekuzu7QK8nT_CT0w9Z7Y4ujh4yu9akf0racx5DEYUJRBdF2k9ky2SppyVsEND-KE3E0RT2nwvKGpWZmSKzaD7g3c4LOdfUN2FWE" />
+                  <img className="product-img" alt="Mini 4 Pro" src="https://dji-vietnam.vn/wp-content/uploads/2023/09/dji-mini-4-pro-17.jpg" />
                 </div>
                 <div className="product-info">
                   <h3 className="product-title">Mini 4 Pro</h3>
@@ -243,19 +243,19 @@ const Home = () => {
         <div className="stats-grid">
           <div className="stat-item">
             <div className="stat-num">15,000+</div>
-            <div className="stat-text">Khách hàng hài lòng</div>
+            <div className="stat-text">Happy Customers</div>
           </div>
           <div className="stat-item">
             <div className="stat-num">50+</div>
-            <div className="stat-text">Mẫu Drone & Phụ kiện</div>
+                <div className="stat-text">Drone Models & Accessories</div>
           </div>
           <div className="stat-item">
             <div className="stat-num">2.5M+</div>
-            <div className="stat-text">Giờ bay an toàn</div>
+            <div className="stat-text">Safe Flight Hours</div>
           </div>
           <div className="stat-item">
             <div className="stat-num">24/7</div>
-            <div className="stat-text">Hỗ trợ kỹ thuật</div>
+            <div className="stat-text">Technical Support</div>
           </div>
         </div>
       </section>

@@ -5,85 +5,9 @@ const AdminDashboard = () => {
   return (
     <div className="admin-body">
       
-      {/* SIDEBAR
-      <aside className="admin-sidebar">
-        <div className="sidebar-header">
-          <h1 className="sidebar-title">Admin Panel</h1>
-          <p className="sidebar-subtitle">DroneMaker Control</p>
-        </div>
-        
-        <nav className="sidebar-nav">
-          <a href="#" className="nav-item active">
-            <span className="material-symbols-outlined">dashboard</span>
-            <span>Dashboard</span>
-          </a>
-          <a href="#" className="nav-item inactive">
-            <span className="material-symbols-outlined">inventory_2</span>
-            <span>Products</span>
-          </a>
-          <a href="#" className="nav-item inactive">
-            <span className="material-symbols-outlined">shopping_cart</span>
-            <span>Orders</span>
-          </a>
-          <a href="#" className="nav-item inactive">
-            <span className="material-symbols-outlined">article</span>
-            <span>Articles</span>
-          </a>
-          <a href="#" className="nav-item inactive">
-            <span className="material-symbols-outlined">settings</span>
-            <span>Settings</span>
-          </a>
-        </nav>
-
-        <div className="sidebar-footer">
-          <div className="user-profile">
-            <img 
-              alt="Admin Avatar" 
-              className="user-avatar" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_7ItPuO4VEenGTpZRUGboSyevCaJ8Zi4bummiSA1PXqNh1xkDAYfjidCTqGR-2NtedX2_bNs5dwG_iaghwI0ljBPpJYFsdojxQRcQaPF8RKXT6NKNs4H-4c7mV5le3G6wwtP79fTHocIIx9SirInHeOPBOCi_UGx28PuFZdEXxMHL4YRzdiuZ-KphBlXDBdMUIjJqNITDNAFttyIdEEAHnMvDBWTTUEcFyrbEtr_UkP_KGRHThOGlRVXNCGZ56rxtVSSdaPP1Ztk" 
-            />
-            <div>
-              <p className="user-name">Alex Rivera</p>
-              <p className="user-role">System Lead</p>
-            </div>
-          </div>
-          <button className="btn-logout">
-            <span className="material-symbols-outlined text-sm">logout</span>
-            Logout
-          </button>
-        </div>
-      </aside> */}
-
-      
-
       {/* MAIN CONTENT */}
       <main className="admin-main">
         
-        {/* TOP HEADER */}
-        <header className="admin-header">
-          <div className="header-brand">
-            <span className="brand-text">DroneMaker</span>
-            <div className="header-divider"></div>
-            <h2 className="page-title">Overview</h2>
-          </div>
-          
-          <div className="header-actions">
-            <div className="search-box">
-              <input 
-                className="search-input" 
-                placeholder="Search systems..." 
-                type="text" 
-              />
-              <span className="material-symbols-outlined search-icon">search</span>
-            </div>
-            <button className="icon-btn">
-              <span className="material-symbols-outlined">notifications</span>
-            </button>
-            <button className="icon-btn">
-              <span className="material-symbols-outlined">account_circle</span>
-            </button>
-          </div>
-        </header>
 
         {/* DASHBOARD CONTENT */}
         <div className="dashboard-content">

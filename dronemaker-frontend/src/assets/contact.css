@@ -1,6 +1,23 @@
 /* =========================================
    CONTACT PAGE - VANILLA CSS
 ========================================= */
+/* --- BREADCRUMBS --- */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-outline, #717785);
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.breadcrumbs a { transition: color 0.3s ease; }
+.breadcrumbs a:hover { color: var(--color-primary, #0059b5); }
+.breadcrumbs .current { color: var(--color-on-surface, #1a1c1d); }
+
 
 .contact-page {
   min-height: 100vh;

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/about.css'; // Đừng quên import file CSS này!
+import '../assets/about.css';
 
 const About = () => {
   return (
@@ -14,17 +14,10 @@ const About = () => {
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3aTtfXcKn4qbUGcjdy4tENi7P_SDxCKVa1cfAHOObadJAecMIEe2qrPoAv4-3CGQitvnt8ckFviUR2qjO2v0k2U1nDytOmpKyDPi4HhX4pHe6XgX_6g8cYwzBRHI75D6nod7R1jGbA0P_AGdhlke0vBLwYDrx7HPuzxxZ7tf-iXLICiWEYUwpdcV4Q9oAQ9WOfrgB09OUh8LTA2e1iSNyskdyD7Gbedav2GxiHrdYZkqxou4yjxt85SfJKuyeFBCxnbpb4tQHO9U" 
           />
         </div>
-        {/* Nút play video  */}
-        {/* <div className="hero-play-wrapper">
-          <div className="hero-play-btn">
-            <span className="material-symbols-outlined hero-play-icon" style={{ fontVariationSettings: "'FILL' 1" }}>
-              play_arrow
-            </span>
-          </div>
-        </div> */}
+
         <div className="hero-content">
-          <p className="hero-tagline">Kiến tạo Tương lai</p>
-          <h1 className="hero-title">Mở rộng Tầm nhìn</h1>
+          <p className="hero-tagline">Shaping the Future</p>
+          <h1 className="hero-title">Expanding Vision</h1>
         </div>
       </section>
 
@@ -33,23 +26,23 @@ const About = () => {
         <div className="container overview-grid">
           <div className="overview-text">
             <h2 className="overview-heading">
-              Chúng tôi tái định nghĩa giới hạn của trí tuệ không gian.
+              We redefine the limits of spatial intelligence.
             </h2>
             <p className="overview-desc">
-              Thành lập năm 2014, DroneMaker đã vươn mình từ một dự án phòng thí nghiệm nhỏ thành công ty dẫn đầu toàn cầu về hệ thống bay tự trị. Chúng tôi không chỉ chế tạo drone; chúng tôi kiến trúc các luồng dữ liệu giúp các ngành công nghiệp nhìn thấy những điều vô hình.
+              Founded in 2014, DroneMaker has grown from a small laboratory project into a global leader in autonomous aerial systems. We don’t just build drones—we architect data streams that enable industries to see the unseen.
             </p>
             <div className="overview-stats">
               <div className="stat-item">
                 <span className="stat-number">500+</span>
-                <span className="stat-label">Bằng sáng chế</span>
+                <span className="stat-label">Patents</span>
               </div>
               <div className="stat-item">
                 <span className="stat-number">120</span>
-                <span className="stat-label">Trung tâm toàn cầu</span>
+                <span className="stat-label">Global Centers</span>
               </div>
               <div className="stat-item">
                 <span className="stat-number">98%</span>
-                <span className="stat-label">Độ tin cậy</span>
+                <span className="stat-label">Reliability</span>
               </div>
             </div>
           </div>
@@ -63,7 +56,7 @@ const About = () => {
             </div>
             <div className="overview-quote-card">
               <p className="quote-text">
-                "Sứ mệnh của chúng tôi là làm cho bầu trời trở nên dễ tiếp cận với mọi người, từ nông nghiệp đến điện ảnh cao cấp."
+                "Our mission is to make the sky accessible to everyone, from agriculture to high-end cinematography."
               </p>
               <p className="quote-author">— Alex Chen, CTO</p>
             </div>
@@ -71,27 +64,25 @@ const About = () => {
         </div>
       </section>
 
-      {/* 3. Mission & Vision (Bento Style) */}
+      {/* 3. Mission & Vision */}
       <section className="bento-section">
         <div className="container">
           <div className="bento-grid-fixed">
             
-            {/* Card Sứ mệnh */}
             <div className="mission-card-fixed">
-              <span className="bento-tag-blue">Sứ mệnh</span>
+              <span className="bento-tag-blue">Mission</span>
               <h3 className="bento-title-dark">
-                Dân chủ hóa độ chính xác thông qua kỹ thuật hàng không tự trị.
+                Democratizing precision through autonomous aerial engineering.
               </h3>
               <p className="bento-desc-dark">
-                Cung cấp cho mọi tổ chức góc nhìn từ chuyến bay, kết hợp AI tiên tiến với phần cứng bền bỉ để giải quyết các thách thức thực tế phức tạp.
+                Empowering organizations with aerial insights by combining advanced AI with robust hardware to solve complex real-world challenges.
               </p>
             </div>
 
-            {/* Card Tầm nhìn */}
             <div className="vision-card-fixed">
-              <span className="bento-tag-light">Tầm nhìn</span>
+              <span className="bento-tag-light">Vision</span>
               <h3 className="bento-title-light">
-                Bầu trời như một lớp hạ tầng toàn cầu liền mạch.
+                The sky as a seamless global infrastructure layer.
               </h3>
               <div className="bento-divider"></div>
             </div>
@@ -104,7 +95,7 @@ const About = () => {
       <section className="timeline-section">
         <div className="container">
           <div className="timeline-header">
-            <h2 className="section-title">Hành trình của chúng tôi.</h2>
+            <h2 className="section-title">Our Journey.</h2>
           </div>
           
           {/* 2014 */}
@@ -114,9 +105,9 @@ const About = () => {
             </div>
             <div className="timeline-content">
               <span className="timeline-year">2014</span>
-              <h4 className="timeline-subtitle">Kỷ nguyên Khởi nghiệp</h4>
+              <h4 className="timeline-subtitle">Startup Era</h4>
               <p className="timeline-desc">
-                Bắt đầu từ một gara nhỏ ở Thung lũng Silicon. Các nhà sáng lập của chúng tôi đã phát triển thuật toán "Smart Hover" đầu tiên, cho phép drone giữ thăng bằng hoàn hảo mà không cần GPS.
+                Started from a small garage in Silicon Valley. Our founders developed the first "Smart Hover" algorithm, enabling drones to maintain perfect stability without GPS.
               </p>
             </div>
           </div>
@@ -128,9 +119,9 @@ const About = () => {
             </div>
             <div className="timeline-content">
               <span className="timeline-year">2018</span>
-              <h4 className="timeline-subtitle">Mở rộng Công nghiệp</h4>
+              <h4 className="timeline-subtitle">Industrial Expansion</h4>
               <p className="timeline-desc">
-                Mở rộng sang các giải pháp công nghiệp. Dòng DroneMaker 4K trở thành tiêu chuẩn cho khảo sát nông nghiệp và lập bản đồ địa hình khắp Bắc Mỹ và Châu Âu.
+                Expanded into industrial solutions. The DroneMaker 4K series became the standard for agricultural surveying and topographic mapping across North America and Europe.
               </p>
             </div>
           </div>
@@ -142,46 +133,47 @@ const About = () => {
             </div>
             <div className="timeline-content">
               <span className="timeline-year">2024</span>
-              <h4 className="timeline-subtitle">Tích hợp AI</h4>
+              <h4 className="timeline-subtitle">AI Integration</h4>
               <p className="timeline-desc">
-                Giới thiệu Nexus AI Core. Nhận dạng đối tượng theo thời gian thực và trí tuệ bầy đàn giờ đây được tích hợp sẵn trên mọi thiết bị bay của DroneMaker, thiết lập tiêu chuẩn mới.
+                Introduced Nexus AI Core. Real-time object recognition and swarm intelligence are now embedded in every DroneMaker aircraft, setting a new industry standard.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Services / Capabilities */}
+      {/* 5. Capabilities */}
       <section className="capabilities-section">
         <div className="container">
           <div className="capabilities-header">
-            <h2 className="section-title">Năng lực Cốt lõi.</h2>
-            <p className="section-desc">Chuyên môn hóa trong ba trụ cột chính của công nghệ hàng không.</p>
+            <h2 className="section-title">Core Capabilities.</h2>
+            <p className="section-desc">
+              Specialized across three key pillars of aerial technology.
+            </p>
           </div>
           
           <div className="capabilities-grid">
-            {/* Card 1 */}
             <div className="capability-card">
               <span className="material-symbols-outlined capability-icon">agriculture</span>
-              <h5 className="capability-title">Nông nghiệp Chính xác</h5>
+              <h5 className="capability-title">Precision Agriculture</h5>
               <p className="capability-desc">
-                Cảm biến hình ảnh nhiệt và đa phổ để theo dõi sức khỏe cây trồng và quản lý tưới tiêu tự động.
+                Thermal and multispectral imaging sensors for crop health monitoring and automated irrigation management.
               </p>
             </div>
-            {/* Card 2 */}
+
             <div className="capability-card">
               <span className="material-symbols-outlined capability-icon">movie</span>
-              <h5 className="capability-title">Hệ thống Điện ảnh</h5>
+              <h5 className="capability-title">Cinematic Systems</h5>
               <p className="capability-desc">
-                Quay phim 8K Pro-Res với hệ thống chống rung gimbal 360 độ được thiết kế cho các tác phẩm điện ảnh đẳng cấp thế giới.
+                8K ProRes video capture with a 360-degree stabilized gimbal system designed for world-class filmmaking.
               </p>
             </div>
-            {/* Card 3 */}
+
             <div className="capability-card">
               <span className="material-symbols-outlined capability-icon">shield</span>
-              <h5 className="capability-title">Tìm kiếm & Cứu nạn</h5>
+              <h5 className="capability-title">Search & Rescue</h5>
               <p className="capability-desc">
-                Hỗ trợ tầm nhìn ban đêm và AI phát hiện con người dành cho lực lượng cứu hộ trong môi trường thời tiết khắc nghiệt.
+                Night vision support and AI-powered human detection for rescue operations in extreme weather conditions.
               </p>
             </div>
           </div>

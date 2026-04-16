@@ -88,7 +88,7 @@ const News = () => {
         </div>
 
         {/* Article 4: Industry */}
-        <article className="article-card">
+        <article onClick={() => {window.location.href = '/news/:id';}} className="article-card">
           <div className="article-img-wrapper">
             <img 
               className="article-img" 

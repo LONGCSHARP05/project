@@ -55,10 +55,7 @@ const ProductCreation = () => {
             <h2 className="page-title">Product Inventory</h2>
             <p className="page-subtitle">Manage your precision-engineered drone fleet</p>
           </div>
-          <button className="btn-primary">
-            <span className="material-symbols-outlined">add</span>
-            <span>New Product</span>
-          </button>
+          
         </header>
 
         <div className="inventory-grid">

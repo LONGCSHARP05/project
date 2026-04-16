@@ -193,19 +193,21 @@
 
 import React, { useState } from 'react';
 import '../assets/shop.css';
+import { useNavigate } from 'react-router-dom';
+
 
 // 1. MOCK DATA ĐÃ ĐƯỢC THÊM (Tổng 9 sản phẩm để test phân trang 6 món/trang)
 const MOCK_PRODUCTS = [
-  { id: 1, name: 'DJI Mini 4 Pro', price: 25000000, category: 'Mini Series', image: 'https://placehold.co/300x200/e2e8f0/1e293b?text=Mini+4+Pro', label: 'Bestseller' },
-  { id: 2, name: 'DJI Air 3', price: 32000000, category: 'Air Series', image: 'https://placehold.co/300x200/e2e8f0/1e293b?text=Air+3', label: 'New' },
-  { id: 3, name: 'DJI Mavic 3 Pro', price: 54000000, category: 'Mavic Series', image: 'https://placehold.co/300x200/e2e8f0/1e293b?text=Mavic+3+Pro', label: 'Pro' },
-  { id: 4, name: 'DroneMaker Inspire 3', price: 145000000, category: 'Enterprise', image: 'https://placehold.co/300x200/e2e8f0/1e293b?text=Inspire+3', label: 'Professional' },
-  { id: 5, name: 'DJI Mini 3', price: 12000000, category: 'Mini Series', image: 'https://placehold.co/300x200/e2e8f0/1e293b?text=Mini+3', label: '' },
-  { id: 6, name: 'Matrice 350 RTK', price: 210000000, category: 'Enterprise', image: 'https://placehold.co/300x200/e2e8f0/1e293b?text=Matrice+350', label: 'Heavy Duty' },
+  { id: 1, name: 'DJI Mini 4 Pro', price: 25000000, category: 'Mini Series', image: 'https://dji-vietnam.vn/wp-content/uploads/2023/09/dji-mini-4-pro-17.jpg', label: 'Bestseller' },
+  { id: 2, name: 'DJI Air 3', price: 32000000, category: 'Air Series', image: 'https://dji-vietnam.vn/wp-content/uploads/2024/09/dji-mini-4k-1.jpg', label: 'New' },
+  { id: 3, name: 'DJI Mavic 3 Pro', price: 54000000, category: 'Mavic Series', image: 'https://dji-vietnam.vn/wp-content/uploads/2024/09/dji-mini-4k-3.jpg', label: 'Pro' },
+  { id: 4, name: 'DroneMaker Inspire 3', price: 145000000, category: 'Enterprise', image: 'https://dji-vietnam.vn/wp-content/uploads/2024/10/dji-air-3s-8.jpg', label: 'Professional' },
+  { id: 5, name: 'DJI Mini 3', price: 12000000, category: 'Mini Series', image: 'https://dji-vietnam.vn/wp-content/uploads/2023/04/DJI-Inspire-3.jpg', label: '' },
+  { id: 6, name: 'Matrice 350 RTK', price: 210000000, category: 'Enterprise', image: 'https://dji-vietnam.vn/wp-content/uploads/2023/04/DJI-Inspire-3-2.jpg', label: 'Heavy Duty' },
   // 3 Sản phẩm thêm vào:
-  { id: 7, name: 'DJI Avata 2', price: 28000000, category: 'Mavic Series', image: 'https://placehold.co/300x200/e2e8f0/1e293b?text=Avata+2', label: 'FPV' },
-  { id: 8, name: 'Agras T40', price: 350000000, category: 'Enterprise', image: 'https://placehold.co/300x200/e2e8f0/1e293b?text=Agras+T40', label: 'Agriculture' },
-  { id: 9, name: 'DJI Mini SE', price: 8000000, category: 'Mini Series', image: 'https://placehold.co/300x200/e2e8f0/1e293b?text=Mini+SE', label: 'Cheap' },
+  { id: 7, name: 'DJI Avata 2', price: 28000000, category: 'Mavic Series', image: 'https://dji-vietnam.vn/wp-content/uploads/2023/04/DJI-Inspire-3-20-scaled.jpg ', label: 'FPV' },
+  { id: 8, name: 'Agras T40', price: 350000000, category: 'Enterprise', image: 'https://dji-vietnam.vn/wp-content/uploads/2023/04/Flycam-DJI-Mavic-3-Pro-7-scaled.jpg', label: 'Agriculture' },
+  { id: 9, name: 'DJI Mini SE', price: 8000000, category: 'Mini Series', image: 'https://dji-vietnam.vn/wp-content/uploads/2023/04/Flycam-DJI-Mavic-3-Pro-5-scaled.jpg', label: 'Cheap' },
 ];
 
 const ITEMS_PER_PAGE = 6; // YÊU CẦU 1: 6 sản phẩm mỗi trang
@@ -282,20 +284,23 @@ const Shop = () => {
     setCurrentPage(1);
   };
 
+const navigate = useNavigate();
+
+
   return (
     <main className="shop-page">
       <div className="shop-container">
         <nav className="breadcrumbs">
-          <a href="#">Trang chủ</a>
+          <a href="#">Home</a>
           <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>chevron_right</span>
-          <span className="current">Cửa hàng</span>
+          <span className="current">Shop</span>
         </nav>
 
         <div className="shop-layout">
           
           <aside className="shop-sidebar">
             <section className="sidebar-section">
-              <h3 className="sidebar-title">Danh mục</h3>
+              <h3 className="sidebar-title">Categories</h3>
               
               {/* NÚT RESET ALL */}
               <div className="category-group" style={{ marginBottom: '10px' }}>
@@ -308,7 +313,7 @@ const Shop = () => {
                      textDecoration: 'none' 
                    }}
                  >
-                   Hiển thị tất cả
+                   Display All
                  </a>
               </div>
 
@@ -324,23 +329,23 @@ const Shop = () => {
               <div className="category-group">
                 <div className="category-header"><span className="category-name">Enterprise</span></div>
                 <div className="category-sublist">
-                  <a href="#" onClick={(e) => handleCategoryClick(e, 'Enterprise')} className={activeCategory === 'Enterprise' ? 'active-link' : ''}>Kỹ thuật & Nông nghiệp</a>
+                  <a href="#" onClick={(e) => handleCategoryClick(e, 'Enterprise')} className={activeCategory === 'Enterprise' ? 'active-link' : ''}>Technical & Agriculture</a>
                 </div>
               </div>
             </section>
 
             <section className="sidebar-section">
-              <h3 className="sidebar-title">Lọc theo giá</h3>
+              <h3 className="sidebar-title">Filter by Price</h3>
               <div className="filter-price">
                 <div className="price-inputs">
-                  <input type="number" placeholder="Tối thiểu" value={priceInput.min} onChange={(e) => setPriceInput({...priceInput, min: e.target.value})} />
+                  <input type="number" placeholder="Min" value={priceInput.min} onChange={(e) => setPriceInput({...priceInput, min: e.target.value})} />
                   <span>-</span>
-                  <input type="number" placeholder="Tối đa" value={priceInput.max} onChange={(e) => setPriceInput({...priceInput, max: e.target.value})} />
+                  <input type="number" placeholder="Max" value={priceInput.max} onChange={(e) => setPriceInput({...priceInput, max: e.target.value})} />
                 </div>
                 {/* HÀNG NÚT CÓ THÊM NÚT XÓA */}
                 <div className="price-actions" style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
-                  <button className="btn-filter" onClick={handleApplyPrice}>Áp dụng</button>
-                  <button className="btn-filter btn-reset-price" onClick={handleResetPrice}>Xóa</button>
+                  <button className="btn-filter" onClick={handleApplyPrice}>Apply</button>
+                  <button className="btn-filter btn-reset-price" onClick={handleResetPrice}>Reset</button>
                 </div>
               </div>
             </section>
@@ -351,15 +356,15 @@ const Shop = () => {
               {/* Toolbar */}
               <div className="shop-toolbar">
                 <p className="shop-results">
-                  Hiển thị {filteredProducts.length === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, filteredProducts.length)} của {filteredProducts.length} kết quả
+                  Displaying {filteredProducts.length === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, filteredProducts.length)} of {filteredProducts.length} results
                 </p>
                 <div className="sort-group">
-                  <label className="sort-label">Sắp xếp:</label>
+                  <label className="sort-label">Sort by:</label>
                   <select className="sort-select" value={sortOption} onChange={(e) => { setSortOption(e.target.value); setCurrentPage(1); }}>
-                    <option value="default">Thứ tự mặc định</option>
-                    <option value="newest">Mới nhất</option>
-                    <option value="price-asc">Giá: Thấp đến Cao</option>
-                    <option value="price-desc">Giá: Cao đến Thấp</option>
+                    <option value="default">Default Order</option>
+                    <option value="newest">Newest</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
                   </select>
                 </div>
               </div>
@@ -369,7 +374,7 @@ const Shop = () => {
             <div className="product-grid">
               {currentProducts.length > 0 ? (
                 currentProducts.map(product => (
-                  <div className="product-card" key={product.id}>
+                  <div className="product-card" key={product.id} onClick={() => navigate(`/product/{product.id}`)}>
                     <div className="product-image-wrap">
                       <img alt={product.name} className="product-image" src={product.image} />
                     </div>
@@ -379,7 +384,9 @@ const Shop = () => {
                       <p className="product-price">{formatPrice(product.price)}</p>
                     </div>
                     <div className="product-add-cart">
-                      <button className="btn-add-cart"><span className="material-symbols-outlined">shopping_bag</span>Thêm vào giỏ hàng</button>
+                      <button className="btn-add-cart" onClick={() => window.location.href = `/cart`}>
+                        <span className="material-symbols-outlined">shopping_bag</span>Add to Cart
+                      </button>
                     </div>
                   </div>
                 ))

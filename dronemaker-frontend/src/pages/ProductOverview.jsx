@@ -1,54 +1,10 @@
-import React from 'react';
+import React, {  } from 'react';
 import '../assets/product-overview.css';
 
 const ProductOverview = () => {
   return (
     <div className="inventory-layout">
       
-      {/* 1. SIDEBAR
-      <aside className="sidebar">
-        <div className="sidebar__header">
-          <h1 className="sidebar__title">Admin Panel</h1>
-          <p className="sidebar__subtitle">DroneMaker Control</p>
-        </div>
-        
-        <nav className="sidebar__nav">
-          <a className="nav__link nav__link--inactive" href="#">
-            <span className="material-symbols-outlined nav__icon">dashboard</span>
-            <span>Dashboard</span>
-          </a>
-          
-          {/* Active Item */}
-          {/* <a className="nav__link nav__link--active" href="#">
-            <span className="material-symbols-outlined nav__icon" style={{ fontVariationSettings: "'FILL' 1" }}>inventory_2</span>
-            <span>Products</span>
-          </a>
-          
-          <a className="nav__link nav__link--inactive" href="#">
-            <span className="material-symbols-outlined nav__icon">shopping_cart</span>
-            <span>Orders</span>
-          </a>
-          <a className="nav__link nav__link--inactive" href="#">
-            <span className="material-symbols-outlined nav__icon">article</span>
-            <span>Articles</span>
-          </a>
-          <a className="nav__link nav__link--inactive" href="#">
-            <span className="material-symbols-outlined nav__icon">settings</span>
-            <span>Settings</span>
-          </a>
-        </nav>
-        
-        <div className="sidebar__footer">
-          <div className="user-profile">
-            <div className="user-profile__avatar">JD</div>
-            <div className="user-profile__info">
-              <p className="user-profile__name">John Director</p>
-              <p className="user-profile__role">Super Admin</p>
-            </div>
-          </div>
-          <button className="btn-logout">Logout</button>
-        </div>
-      </aside> */} 
 
       {/* 2. MAIN CONTENT AREA */}
       <main className="main-content">
@@ -59,7 +15,7 @@ const ProductOverview = () => {
             <h2 className="page-header__title">Product Inventory</h2>
             <p className="page-header__subtitle">Manage your precision-engineered drone fleet</p>
           </div>
-          <button className="btn-primary">
+          <button onClick={() => window.location.href = '/admin/product-creation'} className="btn-primary">
             <span className="material-symbols-outlined text-sm">add</span>
             <span>New Product</span>
           </button>
@@ -106,7 +62,8 @@ const ProductOverview = () => {
                         <div className="switch__track">
                           <div className="switch__dot"></div>
                         </div>
-                        <span className="switch__label">Hiện</span>
+                        <span className="switch__label">H/A</span>
+
                       </label>
                     </td>
                     <td>
@@ -145,7 +102,7 @@ const ProductOverview = () => {
                         <div className="switch__track">
                           <div className="switch__dot"></div>
                         </div>
-                        <span className="switch__label">Ẩn</span>
+                        <span className="switch__label">H/A</span>
                       </label>
                     </td>
                     <td>

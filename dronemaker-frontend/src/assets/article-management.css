@@ -195,9 +195,10 @@ h1, h2, h3, h4, h5, h6, .font-headline {
 }
 .toggle-input { display: none; }
 .toggle-slider {
-  position: relative; width: 2.75rem; height: 1.5rem;
+  position: relative; width: 3rem; height: 1.5rem;
   background-color: var(--color-surface-container-highest);
-  border-radius: 9999px; transition: background-color 0.3s ease;
+  border-radius: 9999px; transition: background-color 0.3s ease-out;
+  
 }
 .toggle-slider::after {
   content: ''; position: absolute; top: 2px; left: 2px;

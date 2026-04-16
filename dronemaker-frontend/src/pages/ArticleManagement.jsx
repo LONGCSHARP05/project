@@ -5,79 +5,10 @@ const ArticleManagement = () => {
   return (
     <div className="admin-body">
       
-      {/* 1. SIDEBAR */}
-      {/* <aside className="admin-sidebar">
-        <div className="sidebar-header">
-          <h1 className="sidebar-title font-headline">Admin Panel</h1>
-          <p className="sidebar-subtitle">DroneMaker Control</p>
-        </div>
-        
-        <nav className="sidebar-nav">
-          <a href="#" className="nav-item inactive">
-            <span className="material-symbols-outlined">dashboard</span>
-            <span>Dashboard</span>
-          </a>
-          <a href="#" className="nav-item inactive">
-            <span className="material-symbols-outlined">inventory_2</span>
-            <span>Products</span>
-          </a>
-          <a href="#" className="nav-item inactive">
-            <span className="material-symbols-outlined">shopping_cart</span>
-            <span>Orders</span>
-          </a> */}
-          {/* Active State */}
-          {/* <a href="#" className="nav-item active">
-            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>article</span>
-            <span>Articles</span>
-          </a>
-          <a href="#" className="nav-item inactive">
-            <span className="material-symbols-outlined">settings</span>
-            <span>Settings</span>
-          </a>
-        </nav>
-        
-        <div className="sidebar-footer">
-          <button className="btn-logout">
-            <span className="material-symbols-outlined">logout</span>
-            <span>Logout</span>
-          </button>
-        </div>
-      </aside> */}
 
       {/* 2. MAIN CONTENT AREA */}
       <main className="main-content">
         
-        {/* TOP BAR */}
-        <header className="admin-topbar">
-          <div className="topbar-left">
-            <div className="search-wrapper">
-              <span className="material-symbols-outlined search-icon">search</span>
-              <input 
-                className="search-input" 
-                placeholder="Search articles..." 
-                type="text" 
-              />
-            </div>
-          </div>
-          
-          <div className="topbar-right">
-            <button className="notification-btn">
-              <span className="material-symbols-outlined">notifications</span>
-              <span className="notification-dot"></span>
-            </button>
-            <div className="user-profile">
-              <div className="user-text">
-                <p className="user-name">Alex Rivera</p>
-                <p className="user-role">Chief Editor</p>
-              </div>
-              <img 
-                alt="Alex Rivera" 
-                className="user-avatar" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwTKvhSzkQiDag8Dr4sqgw5ghQ3RzFIQXZKk2_zf_tJIN991vNffSuEecjn2TuCgLO_YcqSPna6W-MwBOAZAvA07gB1a3XxgR5autkv9Fr0Uu9Fs-GHdOOnOgJlSTftbgDLLX3PbMdiSyuIrkyW7MoGvi760TD9hPY1ClpphRyxJHetYCOmk8neYKulQG0q3h76aNEJ0udXAcGTHs26F2Qd-nU8SP22EL7rfCxFBSUp8YQJgSX8owcHd2JN6rbFoyDO-0QEwSC_18" 
-              />
-            </div>
-          </div>
-        </header>
 
         {/* CONTENT CANVAS */}
         <div className="content-canvas">
@@ -88,9 +19,9 @@ const ArticleManagement = () => {
               <h2 className="page-title font-headline">News & Blog Management</h2>
               <p className="page-subtitle">Manage your company updates and DJI guides</p>
             </div>
-            <button className="btn-create">
+            <button onClick={() => {window.location.href = '/admin/create-article';}} className="btn-create">
               <span className="material-symbols-outlined" style={{ fontWeight: 600 }}>add</span>
-              <span>+ Create New Article</span>
+              <span>Create New Article</span>
             </button>
           </section>
 
@@ -130,7 +61,7 @@ const ArticleManagement = () => {
                     <label className="status-toggle">
                       <input type="checkbox" className="toggle-input" defaultChecked />
                       <div className="toggle-slider"></div>
-                      <span className="toggle-label">Hiện</span>
+                      <span className="toggle-label">H/A</span>
                     </label>
                   </td>
                   <td>
@@ -163,7 +94,7 @@ const ArticleManagement = () => {
                     <label className="status-toggle">
                       <input type="checkbox" className="toggle-input" />
                       <div className="toggle-slider"></div>
-                      <span className="toggle-label">Ẩn</span>
+                      <span className="toggle-label">H/A</span>
                     </label>
                   </td>
                   <td>
@@ -196,7 +127,7 @@ const ArticleManagement = () => {
                     <label className="status-toggle">
                       <input type="checkbox" className="toggle-input" defaultChecked />
                       <div className="toggle-slider"></div>
-                      <span className="toggle-label">Hiện</span>
+                      <span className="toggle-label">H/A</span>
                     </label>
                   </td>
                   <td>

@@ -1,31 +1,31 @@
 import React from 'react';
-import '../assets/contact.css'; // Đảm bảo import đúng đường dẫn file CSS
+import '../assets/contact.css';
 
 const Contact = () => {
   return (
     <main className="contact-page">
       
       {/* 1. Header Section */}
-      <section className="contact-header">
-        <p className="contact-label">Connect With Us</p>
-        <h1 className="contact-title">Trang Liên hệ</h1>
-        <div className="contact-divider"></div>
-      </section>
+      <nav className="breadcrumbs">
+          <a href="#">Home</a>
+          <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>chevron_right</span>
+          <span className="current">Contact</span>
+        </nav>
 
       {/* 2. Grid Content */}
       <div className="contact-grid">
         
         {/* Left Column: Form */}
         <div className="contact-form-card">
-          <h2 className="form-title">Gửi tin nhắn cho chúng tôi</h2>
+          <h2 className="form-title">Send us a message</h2>
           <form className="form-wrapper">
             
             <div className="form-group">
-              <label className="form-label">Họ và tên</label>
+              <label className="form-label">Full Name</label>
               <input 
                 type="text" 
                 className="form-input" 
-                placeholder="Nguyễn Văn A" 
+                placeholder="Nguyen Van A" 
               />
             </div>
 
@@ -39,25 +39,25 @@ const Contact = () => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Địa chỉ</label>
+              <label className="form-label">Address</label>
               <input 
                 type="text" 
                 className="form-input" 
-                placeholder="Hà Nội, Việt Nam" 
+                placeholder="Hanoi, Vietnam" 
               />
             </div>
 
             <div className="form-group">
-              <label className="form-label">Lời nhắn</label>
+              <label className="form-label">Message</label>
               <textarea 
                 className="form-textarea" 
-                placeholder="Chúng tôi có thể giúp gì cho bạn?" 
+                placeholder="How can we help you?" 
                 rows="4"
               ></textarea>
             </div>
 
             <button type="submit" className="btn-submit">
-              Gửi Yêu Cầu
+              Send Request
             </button>
             
           </form>
@@ -73,8 +73,8 @@ const Contact = () => {
                 <span className="material-symbols-outlined">location_on</span>
               </div>
               <div className="info-text-group">
-                <p>Địa chỉ</p>
-                <p>Khu Công Nghệ Cao Hòa Lạc, Thạch Thất, Hà Nội, Việt Nam</p>
+                <p>Address</p>
+                <p>Hoa Lac Hi-Tech Park, Thach That, Hanoi, Vietnam</p>
               </div>
             </div>
 
@@ -109,10 +109,10 @@ const Contact = () => {
             ></div>
             <div className="map-gradient"></div>
             
-            <div className="map-floating-bar">
+            <div onClick={() => window.open('https://www.google.com/maps/place/Khu+C%C3%B4ng+Ngh%E1%BB%87+Cao+H%C3%B2a+L%E1%BA%A1c/data=!4m2!3m1!1s0x0:0xcfc029607e11a4fe?sa=X&ved=1t:2428&ictx=111', '_blank')} className="map-floating-bar">
               <div className="map-floating-left">
                 <span className="material-symbols-outlined map-icon">map</span>
-                <span className="map-floating-text">Mở bản đồ trực tuyến</span>
+                <span className="map-floating-text">Open in Maps</span>
               </div>
               <span className="material-symbols-outlined map-arrow">arrow_forward</span>
             </div>
