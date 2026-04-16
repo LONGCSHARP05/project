@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../contexts/CartContext.jsx'; 
 import '../assets/checkout.css';
 
 const Checkout = () => {
-  const { cartItems, getSubtotal, clearCart } = useCart();
+  const [cartItems, setCartItems] = useState([]);
+  // const [subtotal, setSubtotal] = useState(0);
   const navigate = useNavigate();
 
   const mockItems = [
@@ -47,7 +47,7 @@ const Checkout = () => {
   };
 
   const subtotal = cartItems.length > 0 
-    ? getSubtotal() 
+    ? cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0)
     : mockItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
   
   const shippingFee = shippingMethod === 'express' ? 150000 : 0;
@@ -65,7 +65,7 @@ const Checkout = () => {
     
     setTimeout(() => {
       setShowToast(false);
-      clearCart();
+      setCartItems([]);
       navigate('/shop');
     }, 2000);
   };
